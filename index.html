@@ -14,7 +14,7 @@
   <script src="/patientinfo/dist/patientinfo/main.js"></script>
   <script>
     singleSpa.registerApplication('search', window.search.default, location => true);
-    // singleSpa.registerApplication('patientinfo', window.patientinfo.default, location => true);
+    singleSpa.registerApplication('patientinfo', window.patientinfo.default, Location => location.pathname.startsWith('/patientinfo'));
     singleSpa.start();
   </script>
 </body>

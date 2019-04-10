@@ -17,5 +17,5 @@ export default singleSpaAngular({
   template: '<app-root />',
   Router,
   NgZone: NgZone,
-  AnimationEngine: AnimationEngine, 
+  AnimationEngine: AnimationEngine
 });
