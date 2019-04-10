@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Angular test</title>
+  <title>single-spa</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/" />
 </head>
@@ -11,8 +11,10 @@
   <script src="https://unpkg.com/single-spa/lib/umd/single-spa.min.js"></script>
   <script src="https://unpkg.com/zone.js"></script>
   <script src="/search/dist/search/main.js"></script>
+  <script src="/patientinfo/dist/patientinfo/main.js"></script>
   <script>
     singleSpa.registerApplication('search', window.search.default, location => true);
+    // singleSpa.registerApplication('patientinfo', window.patientinfo.default, location => true);
     singleSpa.start();
   </script>
 </body>

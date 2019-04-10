@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "search": {
+    "patientinfo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "single-spa-angular:build",
           "options": {
-            "outputPath": "dist/search",
+            "outputPath": "dist/patientinfo",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,7 +23,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -58,18 +57,18 @@
         "serve": {
           "builder": "single-spa-angular:dev-server",
           "options": {
-            "browserTarget": "search:single-spa"
+            "browserTarget": "patientinfo:single-spa"
           },
           "configurations": {
             "production": {
-              "browserTarget": "search:build:production"
+              "browserTarget": "patientinfo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "search:build"
+            "browserTarget": "patientinfo:build"
           }
         },
         "test": {
@@ -104,7 +103,7 @@
         "single-spa": {
           "builder": "single-spa-angular:build",
           "options": {
-            "outputPath": "dist/search",
+            "outputPath": "dist/patientinfo",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
@@ -148,17 +147,17 @@
         "single-spa-serve": {
           "builder": "single-spa-angular:dev-server",
           "options": {
-            "browserTarget": "search:single-spa"
+            "browserTarget": "patientinfo:single-spa"
           },
           "configurations": {
             "production": {
-              "browserTarget": "search:build:production"
+              "browserTarget": "patientinfo:build:production"
             }
           }
         }
       }
     },
-    "search-e2e": {
+    "patientinfo-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -167,11 +166,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "search:serve"
+            "devServerTarget": "patientinfo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "search:serve:production"
+              "devServerTarget": "patientinfo:serve:production"
             }
           }
         },
@@ -187,5 +186,5 @@
       }
     }
   },
-  "defaultProject": "search"
+  "defaultProject": "patientinfo"
 }
