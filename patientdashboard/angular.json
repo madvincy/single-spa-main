@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "patientdashboard": {
+    "patientDashboard": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "single-spa-angular:build",
           "options": {
-            "outputPath": "dist/patientdashboard",
+            "outputPath": "dist/patientDashboard",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
@@ -57,18 +58,18 @@
         "serve": {
           "builder": "single-spa-angular:dev-server",
           "options": {
-            "browserTarget": "patientdashboard:single-spa"
+            "browserTarget": "patientDashboard:single-spa"
           },
           "configurations": {
             "production": {
-              "browserTarget": "patientdashboard:build:production"
+              "browserTarget": "patientDashboard:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "patientdashboard:build"
+            "browserTarget": "patientDashboard:build"
           }
         },
         "test": {
@@ -103,7 +104,7 @@
         "single-spa": {
           "builder": "single-spa-angular:build",
           "options": {
-            "outputPath": "dist/patientdashboard",
+            "outputPath": "dist/patientDashboard",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
@@ -115,7 +116,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
@@ -147,17 +149,17 @@
         "single-spa-serve": {
           "builder": "single-spa-angular:dev-server",
           "options": {
-            "browserTarget": "patientdashboard:single-spa"
+            "browserTarget": "patientDashboard:single-spa"
           },
           "configurations": {
             "production": {
-              "browserTarget": "patientdashboard:build:production"
+              "browserTarget": "patientDashboard:build:production"
             }
           }
         }
       }
     },
-    "patientdashboard-e2e": {
+    "patientDashboard-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -166,11 +168,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "patientdashboard:serve"
+            "devServerTarget": "patientDashboard:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "patientdashboard:serve:production"
+              "devServerTarget": "patientDashboard:serve:production"
             }
           }
         },
@@ -186,5 +188,10 @@
       }
     }
   },
-  "defaultProject": "patientdashboard"
+  "defaultProject": "patientDashboard",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "css"
+    }
+  }
 }
