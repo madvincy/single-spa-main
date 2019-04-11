@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "spaauth": {
+    "ngx-amrs-auth": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -11,11 +11,11 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "single-spa-angular:build",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/spaauth",
+            "outputPath": "dist/ngx-amrs-auth",
             "index": "src/index.html",
-            "main": "src/main.single-spa.ts",
+            "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
@@ -23,7 +23,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -56,20 +55,20 @@
           }
         },
         "serve": {
-          "builder": "single-spa-angular:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "spaauth:single-spa"
+            "browserTarget": "ngx-amrs-auth:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "spaauth:build:production"
+              "browserTarget": "ngx-amrs-auth:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "spaauth:build"
+            "browserTarget": "ngx-amrs-auth:build"
           }
         },
         "test": {
@@ -100,65 +99,10 @@
               "**/node_modules/**"
             ]
           }
-        },
-        "single-spa": {
-          "builder": "single-spa-angular:build",
-          "options": {
-            "outputPath": "dist/spaauth",
-            "index": "src/index.html",
-            "main": "src/main.single-spa.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            }
-          }
-        },
-        "single-spa-serve": {
-          "builder": "single-spa-angular:dev-server",
-          "options": {
-            "browserTarget": "spaauth:single-spa"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "spaauth:build:production"
-            }
-          }
         }
       }
     },
-    "spaauth-e2e": {
+    "ngx-amrs-auth-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -167,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "spaauth:serve"
+            "devServerTarget": "ngx-amrs-auth:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "spaauth:serve:production"
+              "devServerTarget": "ngx-amrs-auth:serve:production"
             }
           }
         },
@@ -187,5 +131,5 @@
       }
     }
   },
-  "defaultProject": "spaauth"
+  "defaultProject": "ngx-amrs-auth"
 }

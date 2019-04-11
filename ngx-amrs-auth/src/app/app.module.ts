@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { APP_BASE_HREF } from '@angular/common';
+import { NgxAmrsAuthModuleModule } from './ngx-amrs-auth-module/ngx-amrs-auth-module.module';
 
 @NgModule({
   declarations: [
@@ -11,9 +10,9 @@ import { APP_BASE_HREF } from '@angular/common';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    NgxAmrsAuthModuleModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/spaauth'}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
