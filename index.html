@@ -12,9 +12,14 @@
   <script src="https://unpkg.com/zone.js"></script>
   <script src="/search/dist/search/main.js"></script>
   <script src="/patientinfo/dist/patientinfo/main.js"></script>
-  <script>
-    singleSpa.registerApplication('search', window.search.default, location => true);
-    singleSpa.registerApplication('patientinfo', window.patientinfo.default, Location => location.pathname.startsWith('/patientinfo'));
+  <script src="/spaauth/dist/spaauth/main.js"></script>
+  <script src="/patientdashboard/dist/patientdashboard/main.js"></script>
+ 
+ <script>
+    singleSpa.registerApplication('spaauth', window.spaauth.default, location => true);
+    singleSpa.registerApplication('search', window.search.default, location => location.pathname.startsWith('/search'));
+    singleSpa.registerApplication('patientinfo', window.patientinfo.default, location => location.pathname.startsWith('/patientinfo'));
+    singleSpa.registerApplication('patientdashboard', window.patientdashboard.default, location => location.pathname.startsWith('/patientdashboard'));
     singleSpa.start();
   </script>
 </body>
